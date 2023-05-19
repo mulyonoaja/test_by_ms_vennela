@@ -9,7 +9,7 @@ pipeline{
   stages{
     stage("build image"){
       steps{
-        sh "docker version"
+        sh "docker --version"
         sh "docker build -t mulyonoaja/vbox:test1" 
         echo "image built successfully"
       }     

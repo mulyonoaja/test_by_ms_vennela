@@ -1,16 +1,16 @@
 pipeline{
   agent any
   environment{
-    DOCKERHUB_REPO='docker.io/mulyonoaja/vbox'
+    DOCKERHUB_REPO='docker.io/mulyonoaja'
   }
   stages{
     stage("build image"){
       steps{
-        sh "docker build -t docker.io/mulyonoaja/vbox:test1 ./api/" 
+        sh "docker build -t docker.io/mulyonoaja/vbox:test1 ." 
         echo "image built successfully"
       }     
     }
-    stage("push image to ACR"){
+    stage("push image to Dockerhub"){
       steps{
         echo "pushing to ACR stage"
         withCredentials([usernamePassword(credentialsId: 'azure-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]){

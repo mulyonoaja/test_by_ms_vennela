@@ -9,7 +9,7 @@ pipeline{
   stages{
     stage("build image"){
       steps{
-        sh "docker build -f Jenkinsfile -t mulyonoaja/vbox:test1" 
+        sh "docker build -t mulyonoaja/vbox:test1" 
         echo "image built successfully"
       }     
     }

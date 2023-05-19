@@ -1,12 +1,12 @@
 pipeline{
   agent any
   environment{
-    DOCKERHUB_REPO='docker.io/mulyonoaja'
+    DOCKERHUB_REPO='docker.io'
   }
   stages{
     stage("build image"){
       steps{
-        sh "docker build -t docker.io/mulyonoaja/vbox:test1 ." 
+        sh "docker build -t mulyonoaja/vbox:test1 ." 
         echo "image built successfully"
       }     
     }

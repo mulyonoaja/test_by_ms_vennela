@@ -16,7 +16,7 @@ pipeline{
     stage("push image to Dockerhub"){
       steps{
         echo "pushing to dockerhub stage"
-        withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]){
+        withCredentials([usernamePassword(credentialsId: '5b3bfd70-ae02-49d2-984e-6f98a520f000', passwordVariable: 'PASS', usernameVariable: 'USER')]){
           sh "echo $PASS | docker login $DOCKERHUB_REPO --username $USER --password-stdin"
           sh "nslookup docker.io"
           sh "docker push mulyonoaja/vbox:test1"
